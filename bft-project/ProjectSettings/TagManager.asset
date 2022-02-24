@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullet
+  - Barrel
+  - Follower
+  - FadePanel
+  - Door
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Obstacle
+  - Water
+  - UI
+  - HitBox
+  - Bullet
+  - Player
+  - Follower
+  - Door
+  - Table
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1808887891
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Below
+    uniqueID: 4068550187
+    locked: 0
+  - name: Player
+    uniqueID: 4004281827
+    locked: 0
+  - name: UI
+    uniqueID: 250379447
+    locked: 0

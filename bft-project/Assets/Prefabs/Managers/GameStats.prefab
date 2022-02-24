@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3953554759232518221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3953554759232518219}
+  - component: {fileID: 3953554759232518218}
+  m_Layer: 0
+  m_Name: GameStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3953554759232518219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953554759232518221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3953554759232518218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953554759232518221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7df8242c2207add4dbdf72e1b3929e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentLevel: 1
+  followersSaved: 0
+  sacrificeCount: 0
+  playerMaxHealth: 3
+  playerSpeed: 3
+  followerMaxHealth: 2
+  gunDamage: 1
+  gunKnockbackForce: 200
+  gunClipCapacity: 6
+  fireRate: 10
+  reloadTime: 0.9166667
+  gunBulletType: {fileID: 1933910120569704095, guid: 41e4bca694119be44960f9856164e6a0, type: 3}
+  spreadBulletType: {fileID: 1933910120569704095, guid: de1ce815ebc1e4c42bad32cae0747268, type: 3}
+  gunMuzzleFlash: {fileID: 1486707517153244796, guid: 049c9e4d731ec944f94aaf76e374dc08, type: 3}
