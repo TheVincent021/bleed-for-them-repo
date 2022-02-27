@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d5968e006113b4db47cff54b948063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMoving: 1
+  animateThreshold: 0.25
 --- !u!1 &1925810753959223797
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,13 +232,15 @@ MonoBehaviour:
   isEnabled: 1
   isStopped: 0
   target: {fileID: 0}
-  maxSpeed: 6
+  maxSpeed: 3
+  accelerateRate: 10
   normalDrag: 1
   slowdownDrag: 2
   slowdownDistance: 0
-  stopDistance: 1
-  nextWaypointDistance: 2
-  followSmoothtime: 0.1
+  stopDistance: 0.6
+  nextWaypointDistance: 5
+  pathUpdateRate: 10
+  followSmoothtime: 0
 --- !u!114 &1925810753959223693
 MonoBehaviour:
   m_ObjectHideFlags: 0

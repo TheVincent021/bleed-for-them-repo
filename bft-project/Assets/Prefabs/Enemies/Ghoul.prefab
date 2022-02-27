@@ -176,8 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  damage: 1
-  attackRange: 0.7
 --- !u!1 &3099918666382649664
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,13 +310,15 @@ MonoBehaviour:
   isEnabled: 1
   isStopped: 0
   target: {fileID: 0}
-  maxSpeed: 5
+  maxSpeed: 3
+  accelerateRate: 10
   normalDrag: 1
   slowdownDrag: 0
   slowdownDistance: 0
   stopDistance: 0.6
-  nextWaypointDistance: 1
-  followSmoothtime: 0.15
+  nextWaypointDistance: 5
+  pathUpdateRate: 10
+  followSmoothtime: 0
 --- !u!114 &1007738433
 MonoBehaviour:
   m_ObjectHideFlags: 0

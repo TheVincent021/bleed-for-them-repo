@@ -3,12 +3,14 @@ using UnityEngine;
 
 public class FollowerAnimator : MonoBehaviour
 {
-    Transform player;
+    [SerializeField] float animateThreshold = 0.9f;
 
     Animator animator;
     SpriteRenderer graphics;
     AIPathfinder pathfinder;
     new Rigidbody2D rigidbody;
+
+    Transform player;
 
     private void OnEnable()
     {
@@ -40,19 +42,19 @@ public class FollowerAnimator : MonoBehaviour
         var velocityY = rigidbody.velocity.y;
         if (!pathfinder.IsStopped)
         {
-            if (velocityX > 0.1f && velocityX > Mathf.Abs(velocityY))
+            if (velocityX > animateThreshold && velocityX > Mathf.Abs(velocityY))
             {
                 animator.Play("MoveRight");
             }
-            if (velocityY > 0.1f && velocityY > Mathf.Abs(velocityX))
+            if (velocityY > animateThreshold && velocityY > Mathf.Abs(velocityX))
             {
                 animator.Play("MoveUp");
             }
-            if (velocityX < -0.1f && Mathf.Abs(velocityX) > Mathf.Abs(velocityY))
+            if (velocityX < animateThreshold && Mathf.Abs(velocityX) > Mathf.Abs(velocityY))
             {
                 animator.Play("MoveLeft");
             }
-            if (velocityY < -0.1f && Mathf.Abs(velocityY) > Mathf.Abs(velocityX))
+            if (velocityY < animateThreshold && Mathf.Abs(velocityY) > Mathf.Abs(velocityX))
             {
                 animator.Play("MoveDown");
             }

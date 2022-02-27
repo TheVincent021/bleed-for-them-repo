@@ -9,14 +9,17 @@ public class AIPathfinder : MonoBehaviour
     [SerializeField] bool isStopped = false;
     [SerializeField] Transform target;
     [SerializeField] float maxSpeed = 200f;
+    [SerializeField] float accelerateRate = 10f;
     [SerializeField] float normalDrag = 1f;
     [SerializeField] float slowdownDrag = 2f;
     [SerializeField] float slowdownDistance = 1.5f;
     [SerializeField] float stopDistance = 0.5f;
     [SerializeField] float nextWaypointDistance = 3f;
+    [SerializeField] float pathUpdateRate = 10f;
     [SerializeField] float followSmoothtime = 0.5f;
 
     Vector2 direction = Vector2.zero;
+    Vector2 velocity = Vector2.zero;
     Path currentPath;
     int currentWaypoint;
 
@@ -34,6 +37,7 @@ public class AIPathfinder : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
 
         StartCoroutine("UpdatePath");
+        StartCoroutine("Accelerate");
     }
 
     IEnumerator UpdatePath()
@@ -44,49 +48,48 @@ public class AIPathfinder : MonoBehaviour
                 seeker.StartPath(rigidbody.position, target.position, OnPathComplete);
             else if (target == null)
                 rigidbody.velocity = Vector2.zero;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1f/pathUpdateRate);
         }
     }
 
     private void FixedUpdate ()
     {
-        if (currentPath == null)
+        if (currentPath == null || currentWaypoint >= currentPath.vectorPath.Count)
             return;
-
-        if (currentWaypoint >= currentPath.vectorPath.Count)
-        {
-            return;
-        }
 
         direction = ((Vector2)currentPath.vectorPath[currentWaypoint] - rigidbody.position).normalized;
         var distance = Vector2.Distance(rigidbody.position, currentPath.vectorPath[currentWaypoint]);
         if (distance < nextWaypointDistance)
             currentWaypoint++;
-
-        if (target != null)
-            Accelerate();
     }
 
-    void Accelerate()
+    IEnumerator Accelerate()
     {
-        var newDirection = direction;
-        var distance = Vector2.Distance(rigidbody.position, target.position);
-
-        if (distance < slowdownDistance)
-            rigidbody.drag = slowdownDrag;
-        else
-            rigidbody.drag = normalDrag;
-
-        if (distance < stopDistance || isEnabled == false)
+        while(true)
         {
-            newDirection = Vector2.zero;
-            rigidbody.velocity = Vector2.zero;
-            isStopped = true;
+            if (target != null)
+            {
+                var newDirection = direction;
+                var distance = Vector2.Distance(rigidbody.position, target.position);
 
+                if (distance < slowdownDistance)
+                    rigidbody.drag = slowdownDrag;
+                else
+                    rigidbody.drag = normalDrag;
+
+                if (distance < stopDistance || isEnabled == false)
+                {
+                    newDirection = Vector2.zero;
+                    rigidbody.velocity = Vector2.zero;
+                    isStopped = true;
+                }
+                else isStopped = false;
+
+                if (!isStopped) rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, newDirection * maxSpeed, ref velocity, followSmoothtime);
+            }
+
+            yield return new WaitForSeconds(1f/accelerateRate);
         }
-        else isStopped = false;
-
-        rigidbody.velocity = Vector2.Lerp(rigidbody.velocity, newDirection * maxSpeed, followSmoothtime);
     }
 
     void OnPathComplete (Path p)
