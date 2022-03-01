@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Users\klank\Documents\GitHub\bleed-for-them-repo\bft-project\bft-project_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\klank\Documents\GitHub\bleed-for-them-repo\bft-project\bft-project_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\klank\Documents\GitHub\bleed-for-them-repo\bft-project\bft-project_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\klank\Documents\GitHub\bleed-for-them-repo\bft-project\bft-project_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3157003241" Language="SFX" Hash="1071932091">
+			<ObjectPath>\SoundBanks\Default Work Unit\Test</ObjectPath>
+			<ShortName>Test</ShortName>
+			<Path>Test.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2678880713" Name="Fire" ObjectPath="\Events\Default Work Unit\Fire" DurationType="OneShot" DurationMin="1.123" DurationMax="1.123">
+					<IncludedMemoryFiles>
+						<File Id="638539003" Language="SFX">
+							<ShortName>Weapon_Fire__1.wav</ShortName>
+							<Path>SFX\Weapon_Fire__1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

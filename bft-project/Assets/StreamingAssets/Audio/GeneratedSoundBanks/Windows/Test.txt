@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2678880713	Fire			\Default Work Unit\Fire	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	638539003	New Sound SFX_01	C:\Users\klank\Documents\GitHub\bleed-for-them-repo\bft-project\bft-project_WwiseProject\.cache\Windows\SFX\Weapon_Fire__1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\New Sound SFX_01		215680
+
