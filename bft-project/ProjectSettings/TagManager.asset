@@ -9,6 +9,7 @@ TagManager:
   - Follower
   - FadePanel
   - Door
+  - PanicPoint
   layers:
   - Default
   - TransparentFX

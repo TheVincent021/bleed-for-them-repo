@@ -28,7 +28,7 @@ public class AIPathfinder : MonoBehaviour
 
     public bool IsEnabled => isEnabled;
     public bool IsStopped => isStopped;
-    public Transform GetTarget() => target;
+    public Transform Target => target;
     public void SetTarget(Transform value) => target = value;
 
     private void Awake ()
