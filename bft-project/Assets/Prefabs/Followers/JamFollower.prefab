@@ -130,7 +130,6 @@ GameObject:
   - component: {fileID: 1925810753959223793}
   - component: {fileID: 6317152489657194640}
   - component: {fileID: 1925810753959223693}
-  - component: {fileID: -6010872706311094208}
   m_Layer: 9
   m_Name: JamFollower
   m_TagString: Follower
@@ -258,23 +257,6 @@ MonoBehaviour:
   health: 3
   recoveryTime: 1
   isRecovering: 0
---- !u!114 &-6010872706311094208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925810753959223797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722715a2570ccf246a2c87dfee33dda6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPanicking: 0
-  treshold: 3
-  panicTime: 7
-  freezeTime: 5
-  bait: {fileID: 5604881282550073762}
 --- !u!1 &6753959158670047380
 GameObject:
   m_ObjectHideFlags: 0

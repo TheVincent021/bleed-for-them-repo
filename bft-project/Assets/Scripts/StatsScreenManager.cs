@@ -34,6 +34,6 @@ public class StatsScreenManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         playerInput.ActivateInput();
         playerInput.SwitchCurrentActionMap("Default");
-        SceneManager.LoadScene(GameStats.Instance.currentLevel);
+        SceneManager.LoadScene(GameStats.Instance.currentLevel + 1);
     }
 }
